@@ -24,15 +24,21 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to "Project name", "#", class: "navbar-brand"
+          = link_to "Joggy", welcome_index_path, class: "navbar-brand"
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li.active
-              %a{href: "#"} Home
+            / .active
             %li
-              %a{href: "#about"} About
+              %a{href: welcome_index_path} Home
             %li
-              %a{href: "#contact"} Contact
+              %a{href: users_path} Users
+            / %li
+            /   %a{href: runs_path} Runs
+            - if current_user
+              %li
+                %a{href: user_path(current_user)}= "#{current_user.name} Profile"
+          %ul.nav.navbar-nav.navbar-right
+            = render 'devise/shared/login_links'
     .container
       - flash.each do |name, msg|
         = content_tag :div, class: "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do

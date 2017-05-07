@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = CreateAdminService.new.call
+puts "Created Admin user".colorize(:green)
+puts "Login with Admin user to test drive the system, use this email '#{user.email}' and password '#{Rails.application.secrets.admin_password}'".colorize(:red)
