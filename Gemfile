@@ -50,6 +50,15 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# haml and bootstrap
+# HAML and Bootstrap
 gem 'haml-rails'
 gem 'bootstrap-generators'
+gem 'devise-bootstrap-views'
+
+# User authentication
+gem 'devise', github: 'plataformatec/devise'
+gem 'erubis'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+# gem 'google-api-client', require: 'google/api_client'
