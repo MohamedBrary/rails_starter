@@ -64,6 +64,11 @@ gem 'devise-bootstrap-views'
 gem 'devise', github: 'plataformatec/devise'
 gem 'erubis'
 gem 'omniauth'
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-# gem 'google-api-client', require: 'google/api_client'
+gem 'google-api-client', require: 'google/apis'
+
+# Store cookies as activerecord
+# gem 'activerecord-session_store'
+gem 'activerecord-session_store', :git => 'https://github.com/rails/activerecord-session_store.git', :ref => '3fc715a434e2b58c07ef91b34b9e2a39c4d47a37'
