@@ -18,7 +18,7 @@ $ gem install rails
 # Creates new rails app "my_app"
 # -d mysql: defining database
 # -T to skip generating test folder and files (in case of planning to use rspec)
-rails new my_app -d mysql -T
+$ rails new my_app -d mysql -T
 
 # go into the new project directory and create a .ruby-version and .ruby-gemset for the project
 $ cd my_app
