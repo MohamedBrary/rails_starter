@@ -39,4 +39,27 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # ActionMailer Config
+  
+  # Don't care if the mailer can't send.
+  # config.action_mailer.raise_delivery_errors = true
+
+  # config.action_mailer.perform_caching = false
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  # config.action_mailer.delivery_method = :smtp
+  
+  # config.action_mailer.smtp_settings = {
+  #   address:              'smtp.gmail.com',
+  #   port:                 587,
+  #   domain:               'localhost',
+  #   user_name:            Rails.application.secrets.email_provider_username,
+  #   password:             Rails.application.secrets.email_provider_password,
+  #   authentication:       'plain',
+  #   enable_starttls_auto: true  }
+  
+  # # Send email in development mode?
+  # config.action_mailer.perform_deliveries = true
 end

@@ -36,6 +36,21 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
+
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'vcr'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'faker'
+end
+
+group :test do
+  gem 'webmock'
 end
 
 group :development do
@@ -46,8 +61,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  # used to populate database with fake data
-  gem 'faker'
+  # used to populate database with fake data  
   gem 'populator'  
   gem 'colorize' # Coloring the console
 end
@@ -59,6 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'bootstrap-generators'
 gem 'devise-bootstrap-views'
+gem 'simple_form'
 
 # User authentication
 gem 'devise', github: 'plataformatec/devise'
