@@ -22,7 +22,7 @@
             %img{ src: user.image, width: '20px'}
             = user.name
           %td= user.email
-          %td= user.role
+          %td= user.role.titleize
           %td= link_to 'Show', user
           %td= link_to 'Edit', edit_user_path(user)
           %td= link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete

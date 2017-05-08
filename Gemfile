@@ -72,3 +72,6 @@ gem 'google-api-client', require: 'google/apis'
 # Store cookies as activerecord
 # gem 'activerecord-session_store'
 gem 'activerecord-session_store', :git => 'https://github.com/rails/activerecord-session_store.git', :ref => '3fc715a434e2b58c07ef91b34b9e2a39c4d47a37'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
