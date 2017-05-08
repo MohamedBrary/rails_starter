@@ -36,8 +36,10 @@ $ git push -u origin master
 
 #### Haml and Bootstrap
 
+```ruby
 gem 'haml-rails'
 gem 'bootstrap-generators' # to generate views using bootstrap
+```
 
 ```sh
 $ rake haml:erb2haml
@@ -45,6 +47,7 @@ $ rails generate bootstrap:install --template-engine=haml
 ```
 #### Devise and OmniAuth
 
+```ruby
 gem 'devise', '~> 3.4'
 gem 'omniauth'
 gem 'omniauth-twitter'
@@ -55,6 +58,7 @@ gem 'instagram'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', require: 'google/api_client'
 gem 'devise-bootstrap-views' # to generate bootstrap devise views
+```
 
 ```sh
 $ rails g devise:views:bootstrap_haml_templates
@@ -67,6 +71,5 @@ $ rake db:create db:migrate
 
 ### Others
 
-- For devise and other authentication options checkout this See [link](http://willschenk.com/setting-up-devise-with-twitter-and-facebook-and-other-omniauth-schemes-without-email-addresses/).
-
-- To setup testing checkout this See [link](http://willschenk.com/setting-up-testing/).
+* For devise and other authentication options checkout this See [link](http://willschenk.com/setting-up-devise-with-twitter-and-facebook-and-other-omniauth-schemes-without-email-addresses/).
+* To setup testing checkout this See [link](http://willschenk.com/setting-up-testing/).
