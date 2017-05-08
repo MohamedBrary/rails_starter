@@ -15,9 +15,13 @@
     .col-sm-10
       = f.text_field :name, class: 'form-control'
   .form-group
+    = f.label :email, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.email_field :email, class: 'form-control'
+  .form-group
     = f.label :role, class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.number_field :role, class: 'form-control'
+      = f.select :role, user_roles, {}, class: 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: 'btn btn-primary'

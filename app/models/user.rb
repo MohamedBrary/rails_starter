@@ -4,13 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
-  enum role: [ :regular, :user_manager, :admin ]
+  enum role: { regular: 0, user_manager: 1, admin: 2 }
 
-  has_many :identities, dependent: :destroy
+  has_many :identities, dependent: :destroy  
   
-  attr_accessor :oauth_callback
-  attr_accessor :current_password
+  # -- Validations
     
+  validates_presence_of   :name
   validates_presence_of   :email, if: :email_required?
   validates_uniqueness_of :email, allow_blank: true, if: :email_changed?
   validates_format_of     :email, with: Devise.email_regexp, allow_blank: true, if: :email_changed?
@@ -28,6 +28,16 @@ class User < ApplicationRecord
     @oauth_callback != true
   end
 
+  # -- Attributes
+  attr_accessor :oauth_callback
+  attr_accessor :current_password
+
+  def image
+    identities.pluck(:image).compact.first || '/images/default.jpg'
+  end
+
+  # -- OmniAuth
+
   def facebook
     identities.where( :provider => "facebook" ).first
   end
@@ -42,7 +52,7 @@ class User < ApplicationRecord
 
   def google_oauth2_client
     if !@google_oauth2_client
-      @google_oauth2_client = Google::APIClient.new(:application_name => 'HappySeed App', :application_version => "1.0.0" )
+      @google_oauth2_client = Google::APIClient.new(:application_name => 'Joggy', :application_version => "1.0.0" )
       @google_oauth2_client.authorization.update_token!({:access_token => google_oauth2.accesstoken, :refresh_token => google_oauth2.refreshtoken})
     end
     @google_oauth2_client

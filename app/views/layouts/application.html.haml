@@ -24,7 +24,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to "Joggy", welcome_index_path, class: "navbar-brand"
+          = link_to "App Name", welcome_index_path, class: "navbar-brand"
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
             / .active
@@ -34,10 +34,12 @@
               %a{href: users_path} Users
             / %li
             /   %a{href: runs_path} Runs
+          %ul.nav.navbar-nav.navbar-right
             - if current_user
               %li
-                %a{href: user_path(current_user)}= "#{current_user.name} Profile"
-          %ul.nav.navbar-nav.navbar-right
+                %a{href: user_path(current_user)}
+                  %img{ src: current_user.image, width: '20px'}
+                  = current_user.name
             = render 'devise/shared/login_links'
     .container
       - flash.each do |name, msg|

@@ -9,6 +9,7 @@
     %thead
       %tr
         %th Name
+        %th Email
         %th Role
         %th
         %th
@@ -17,7 +18,10 @@
     %tbody
       - @users.each do |user|
         %tr
-          %td= user.name
+          %td
+            %img{ src: user.image, width: '20px'}
+            = user.name
+          %td= user.email
           %td= user.role
           %td= link_to 'Show', user
           %td= link_to 'Edit', edit_user_path(user)

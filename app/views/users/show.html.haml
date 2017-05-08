@@ -7,8 +7,17 @@
     Edit
   %h1 Show user
 
-%dl.dl-horizontal
-  %dt Name:
-  %dd= @user.name
-  %dt Role:
-  %dd= @user.role
+%table
+  %td{ style: 'padding-left:150px'}
+    %img{ src: @user.image, width: '100px'}  
+  %td{ style: 'padding-left:50px'}
+    %p
+      %b Name:
+    %p 
+      %b Email:
+    %p 
+      %b Role:
+  %td{ style: 'padding-left:20px'}
+    %p= @user.name
+    %p= @user.email
+    %p= @user.role.titleize
