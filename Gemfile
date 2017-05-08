@@ -51,6 +51,7 @@ end
 
 group :test do
   gem 'webmock'
+  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -83,6 +84,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', require: 'google/apis'
+
+# User authorization
+gem 'pundit'
 
 # Store cookies as activerecord
 # gem 'activerecord-session_store'

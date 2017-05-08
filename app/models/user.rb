@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
-  enum role: { regular: 0, user_manager: 1, admin: 2 }
+  enum role: { user: 0, manager: 1, admin: 2 }
 
   has_many :identities, dependent: :destroy  
   
@@ -26,6 +26,13 @@ class User < ApplicationRecord
 
   def email_required?
     @oauth_callback != true
+  end
+
+  # -- Callbacks  
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :user
   end
 
   # -- Attributes

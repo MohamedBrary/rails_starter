@@ -18,10 +18,11 @@
     = f.label :email, class: 'col-sm-2 control-label'
     .col-sm-10
       = f.email_field :email, class: 'form-control'
-  .form-group
-    = f.label :role, class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.select :role, user_roles, {}, class: 'form-control'
+  - if policy(@user).permitted_attributes.include? :role
+    .form-group
+      = f.label :role, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.select :role, user_roles, {}, class: 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: 'btn btn-primary'

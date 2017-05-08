@@ -1,7 +1,4 @@
-.page-header
-  = link_to new_user_path, class: 'btn btn-primary' do
-    %span.glyphicon.glyphicon-plus
-    New User
+.page-header  
   %h1 Listing users
 
 .table-responsive
@@ -24,5 +21,5 @@
           %td= user.email
           %td= user.role.titleize
           %td= link_to 'Show', user
-          %td= link_to 'Edit', edit_user_or_registeration_path(user)
+          %td= link_to 'Edit', edit_user_path(user)
           %td= link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete

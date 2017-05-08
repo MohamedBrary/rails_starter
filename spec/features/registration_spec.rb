@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature "Registration", :type => :feature do
   it "should let you create a new user" do
     visit new_user_registration_path

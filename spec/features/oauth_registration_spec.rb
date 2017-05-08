@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 feature "OAuthRegistrations", :type => :feature do
   include Warden::Test::Helpers
 

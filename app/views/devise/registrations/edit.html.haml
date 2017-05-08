@@ -6,13 +6,10 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       .form-group
         = f.label :name
-        = f.email_field :name, autofocus: true, class: 'form-control'
+        = f.text_field :name, autofocus: true, class: 'form-control'
       .form-group
         = f.label :email
-        = f.email_field :email, class: 'form-control'
-      .form-group
-        = f.label :role
-        = f.select :role, user_roles, {}, class: 'form-control'
+        = f.email_field :email, class: 'form-control'      
       .form-group
         = f.label :password
         %i
