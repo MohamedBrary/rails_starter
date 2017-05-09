@@ -2,7 +2,8 @@ module Api::V1::ModelHash
   def user_hash(user)
     {
         id: user.id,
-        email: user.email
+        email: user.email,
+        name: user.name
     }
   end
 

@@ -1,6 +1,16 @@
 class Api::V1::UsersController < Api::V1::BaseController
   before_action :requires_authentication_token, except: %w(create forgot_password reset_password)
   before_action :set_user, only: %w(show update)
+  before_action :authorize_user, only: %w(index show update)
+
+  def index
+    @users = policy_scope(User)
+    respond_to do |format|
+      format.json do
+        render json: { users: @users }, status: :ok
+      end      
+    end
+  end
 
   def show
     respond_to do |format|
@@ -12,6 +22,17 @@ class Api::V1::UsersController < Api::V1::BaseController
         format.json do
           render json: { errors: { id: 'not found' } }, status: :not_found
         end
+      end
+    end
+  end
+
+  def update
+    user_params.delete(:password) if user_params[:password].blank?
+    respond_to do |format|
+      if @user.update(user_params)
+        format.json { render json: { user: user_hash(@user) }, status: :ok }
+      else
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -73,10 +94,17 @@ class Api::V1::UsersController < Api::V1::BaseController
   private
 
   def set_user
-    @user = User.where(id: params[:id]).first
+    # making sure that current user has access to the set user
+    @user = policy_scope(User).where(id: params[:id]).first
   end
 
-  def user_params
-    params.require(:user).permit :email, :password, :name, :reset_password_token, :password_confirmation
+  def authorize_user
+    # authorize the set user, or the Class User in case the user isn't initialized
+    authorize (@user || User)
   end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(policy(@user || User).permitted_attributes)
+  end  
 end

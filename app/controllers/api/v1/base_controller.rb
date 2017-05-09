@@ -19,4 +19,10 @@ class Api::V1::BaseController < ApplicationController
       current_user.present? ? (current_user_token.try(:touch); true) : false
     end
   end
+
+  def user_not_authorized
+    respond_to do |format|
+      format.json { render json: {errors: [message: "Sorry! You are not authorized to perform this action."]}, status: :unauthorized }
+    end
+  end
 end

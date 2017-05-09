@@ -27,8 +27,8 @@ class UserPolicy < ApplicationPolicy
 
   def permitted_attributes
     # normal users can't change their own role
-    attributes = [:name, :email, :password, :password_confirmation, :role]
-    current_user_allowed_to_crud? ? attributes : (attributes - [:role])
+    attributes = [:name, :email, :password, :password_confirmation, :reset_password_token, :role]
+    (current_user && current_user_allowed_to_crud?) ? attributes : (attributes - [:role])
   end
 
   protected

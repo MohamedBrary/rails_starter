@@ -1,9 +1,9 @@
 require 'rspec_api_documentation/dsl'
 
-resource 'Token' do
+resource 'Token', :type => :api do
   let(:user) { FactoryGirl.create :user_with_token }
 
-  post '/v1/token', format: :json do
+  post '/api/v1/token', format: :json do
     before { user.user_tokens.destroy }
 
     parameter :email, 'Email', required: true, scope: :user
@@ -40,7 +40,7 @@ resource 'Token' do
     end
   end
 
-  delete '/v1/token', format: :json do
+  delete '/api/v1/token', format: :json do
     header 'AUTHORIZATION', :token
     let(:token) { ActionController::HttpAuthentication::Token.encode_credentials user.user_tokens.first.try :access_token }
 

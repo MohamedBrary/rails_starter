@@ -1,4 +1,4 @@
-describe User do
+describe User, :type => :model do
 
   before(:each) { @user = User.new(email: 'user@example.com') }
 
