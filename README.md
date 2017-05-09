@@ -10,7 +10,6 @@ This is a Rails 5 starter application to boost your MVP development.
 * Pundit for authorization, and different roles for users
 * API with token authentication
 * Rspec and Capybara for automated testing, and test coverage for all implemented features
-* Login as an admin:
 
 #### Take a look:
 
