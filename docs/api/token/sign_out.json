@@ -2,7 +2,7 @@
   "resource": "Token",
   "resource_explanation": null,
   "http_method": "DELETE",
-  "route": "/v1/token",
+  "route": "/api/v1/token",
   "description": "sign out",
   "explanation": null,
   "parameters": [
@@ -14,17 +14,17 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "/v1/token",
+      "request_path": "/api/v1/token",
       "request_body": null,
       "request_headers": {
-        "Authorization": "Token token=\"d8ab24c9\""
+        "Authorization": "Token token=\"9dc9b8ff\""
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"user_token\": {\n    \"access_token\": \"d8ab24c9\",\n    \"user\": {\n      \"id\": 4,\n      \"email\": \"4.user@example.com\"\n    }\n  }\n}",
+      "response_body": "{\n  \"user_token\": {\n    \"access_token\": \"9dc9b8ff\",\n    \"user\": {\n      \"id\": 4,\n      \"email\": \"user.4@example.com\",\n      \"name\": \"Test User 4\"\n    }\n  }\n}",
       "response_headers": {
       },
       "response_content_type": "application/json; charset=utf-8",

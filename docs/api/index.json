@@ -8,14 +8,14 @@
           "description": "sign in",
           "link": "token/sign_in.json",
           "groups": "all",
-          "route": "/v1/token",
+          "route": "/api/v1/token",
           "method": "post"
         },
         {
           "description": "sign out",
           "link": "token/sign_out.json",
           "groups": "all",
-          "route": "/v1/token",
+          "route": "/api/v1/token",
           "method": "delete"
         }
       ]
@@ -28,29 +28,43 @@
           "description": "forgot password",
           "link": "user/forgot_password.json",
           "groups": "all",
-          "route": "/v1/users/forgot_password",
+          "route": "/api/v1/users/forgot_password",
           "method": "post"
+        },
+        {
+          "description": "index",
+          "link": "user/index.json",
+          "groups": "all",
+          "route": "/api/v1/users",
+          "method": "get"
         },
         {
           "description": "reset password",
           "link": "user/reset_password.json",
           "groups": "all",
-          "route": "/v1/users/reset_password",
+          "route": "/api/v1/users/reset_password",
           "method": "put"
         },
         {
           "description": "show",
           "link": "user/show.json",
           "groups": "all",
-          "route": "/v1/users/:id",
+          "route": "/api/v1/users/:id",
           "method": "get"
         },
         {
           "description": "sign up",
           "link": "user/sign_up.json",
           "groups": "all",
-          "route": "/v1/users",
+          "route": "/api/v1/users",
           "method": "post"
+        },
+        {
+          "description": "update",
+          "link": "user/update.json",
+          "groups": "all",
+          "route": "/api/v1/users/:id",
+          "method": "put"
         }
       ]
     }

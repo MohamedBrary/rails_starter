@@ -1,16 +1,20 @@
 {
   "resource": "User",
   "resource_explanation": null,
-  "http_method": "POST",
-  "route": "/api/v1/users/forgot_password",
-  "description": "forgot password",
+  "http_method": "PUT",
+  "route": "/api/v1/users/:id",
+  "description": "update",
   "explanation": null,
   "parameters": [
     {
       "required": true,
+      "name": "id",
+      "description": "User Unique Identifier"
+    },
+    {
       "scope": "user",
-      "name": "email",
-      "description": "Email"
+      "name": "name",
+      "description": "Updated Name"
     }
   ],
   "response_fields": [
@@ -18,17 +22,18 @@
   ],
   "requests": [
     {
-      "request_method": "POST",
-      "request_path": "/api/v1/users/forgot_password",
-      "request_body": "user[email]=7_user%40example.net",
+      "request_method": "PUT",
+      "request_path": "/api/v1/users/11",
+      "request_body": "user[name]=Test+User+12+Updated",
       "request_headers": {
+        "Authorization": "Token token=\"1334e0ea\""
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/x-www-form-urlencoded",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"user\": {\n    \"email\": \"7_user@example.net\"\n  }\n}",
+      "response_body": "{\n  \"user\": {\n    \"id\": 11,\n    \"email\": \"user.12@example.org\",\n    \"name\": \"Test User 12 Updated\"\n  }\n}",
       "response_headers": {
       },
       "response_content_type": "application/json; charset=utf-8",

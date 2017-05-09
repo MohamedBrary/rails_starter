@@ -8,8 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -48,6 +47,9 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'faker'
   gem 'rspec_api_documentation'
+
+  # Use mysql as the database for Active Record
+  gem 'mysql2', '>= 0.3.18', '< 0.5'
 end
 
 group :test do
@@ -66,6 +68,10 @@ group :development do
   # used to populate database with fake data  
   gem 'populator'  
   gem 'colorize' # Coloring the console output
+end
+
+group :production do
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

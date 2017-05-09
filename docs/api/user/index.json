@@ -2,8 +2,8 @@
   "resource": "User",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/api/v1/users/:id",
-  "description": "show",
+  "route": "/api/v1/users",
+  "description": "index",
   "explanation": null,
   "parameters": [
     {
@@ -18,17 +18,18 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/api/v1/users/10",
+      "request_path": "/api/v1/users?id=9",
       "request_body": null,
       "request_headers": {
-        "Authorization": "Token token=\"1263f1bc\""
+        "Authorization": "Token token=\"22ecda17\""
       },
       "request_query_parameters": {
+        "id": "9"
       },
       "request_content_type": null,
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"user\": {\n    \"id\": 10,\n    \"email\": \"11_user@example.org\",\n    \"name\": \"Test User 11\"\n  }\n}",
+      "response_body": "{\n  \"users\": [\n    {\n      \"id\": 9,\n      \"name\": \"Test User 10\",\n      \"role\": \"admin\",\n      \"created_at\": \"2017-05-09T17:52:38.000Z\",\n      \"updated_at\": \"2017-05-09T17:52:38.000Z\",\n      \"email\": \"user_10@example.org\"\n    }\n  ]\n}",
       "response_headers": {
       },
       "response_content_type": "application/json; charset=utf-8",

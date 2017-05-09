@@ -63,7 +63,7 @@ resource 'User', :type => :api do
     end
   end
 
-  get '/api/v1/users', format: :json do
+  get '/api/v1/users', format: :json, document: false do
     before { user.save }
 
     header 'AUTHORIZATION', :token
