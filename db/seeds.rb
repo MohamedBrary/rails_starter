@@ -7,5 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = CreateAdminService.new.call
-puts "Created Admin user".colorize(:green)
-puts "Login with Admin user to test drive the system, use this email '#{user.email}' and password '#{Rails.application.secrets.admin_password}'".colorize(:red)
+
+created = "Created Admin user"
+login_info = "Login with Admin user to test drive the system, use this email '#{user.email}' and password '#{Rails.application.secrets.admin_password}'"
+
+if created.respond_to? :colorize
+	puts created.colorize(:green)
+	puts login_info.colorize(:red)
+else
+	puts "#{created}\n#{login_info}"
+end
