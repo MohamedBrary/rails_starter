@@ -1,75 +1,21 @@
-## Creating Rails Project
+## Rails 5 Starter Application
 
-### Initialization
+This is a Rails 5 starter application to boost your MVP development.
 
-```sh
-# List available rubies, to choose which ruby to use
-$ rvm list rubies
+#### What is featured till now:
 
-# To install new ruby use, for example version '2.4.1'
-$ rvm install 2.4.1
+* HAML and Bootstrap generators
+* Devise for authentication
+* Omniauth for Facebook and Google authentication
+* Pundit for authorization, and different roles for users
+* API with token authentication
+* Rspec and Capybara for automated testing, and test coverage for all implemented features
+* Login as an admin:
 
-# create and use the new RVM gemset for project "my_app"
-$ rvm use --create 2.4.1@my_app
+#### Take a look:
 
-# install latest rails into the blank gemset
-$ gem install rails
+This application is deployed on [Heroku](https://rails5-starter.herokuapp.com), use these credentials to login as an admin user:
+* Email: 'admin@rails5-starter.com'
+* Password: 'password'
 
-# Creates new rails app "my_app"
-# -d mysql: defining database
-# -T to skip generating test folder and files (in case of planning to use rspec)
-$ rails new my_app -d mysql -T
-
-# go into the new project directory and create a .ruby-version and .ruby-gemset for the project
-$ cd my_app
-$ rvm --ruby-version use 2.4.1@my_app
-
-# initialize git
-$ git init
-$ git add .
-$ git commit -m 'new rails app'
-$ git remote add origin git@git.x.com:x/my_app.git
-$ git push -u origin master
-```
-
-### Gems
-
-#### Haml and Bootstrap
-
-```ruby
-gem 'haml-rails'
-gem 'bootstrap-generators' # to generate views using bootstrap
-```
-
-```sh
-$ rake haml:erb2haml
-$ rails generate bootstrap:install --template-engine=haml
-```
-#### Devise and OmniAuth
-
-```ruby
-gem 'devise', '~> 3.4'
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-instagram'
-gem 'twitter'
-gem 'instagram'
-gem 'omniauth-google-oauth2'
-gem 'google-api-client', require: 'google/api_client'
-gem 'devise-bootstrap-views' # to generate bootstrap devise views
-```
-
-```sh
-$ rails g devise:views:bootstrap_haml_templates
-$ rails g scaffold User name role:integer
-$ rails generate devise User
-
-# Edit database.yml to match your configuration
-$ rake db:create db:migrate
-```
-
-### Others
-
-* For devise and other authentication options checkout this See [link](http://willschenk.com/setting-up-devise-with-twitter-and-facebook-and-other-omniauth-schemes-without-email-addresses/).
-* To setup testing checkout this See [link](http://willschenk.com/setting-up-testing/).
+To see the steps used creating this app, checkout out this [gist](https://gist.github.com/MohamedBrary/12465abb009d5dbeadeb8cde9adb30b5).
