@@ -1,61 +1,7 @@
-feature "Registration", :type => :feature do
-  it "should let you create a new user" do
-    visit new_user_registration_path
-
-    within "#new_user" do
-      fill_in "user_name", with: "Test User"
-      fill_in "user_email", with: "test@example.com"
-      fill_in "user_password", with: "123456789"
-      fill_in "user_password_confirmation", with: "123456789"
-    end
-
-    click_button "Sign up"
-
-    expect( page.body ).to include( "Welcome! You have signed up successfully." )
-
-    click_link "Test User"
-  end
-
-  it "should require a user to have a name" do
-    visit new_user_registration_path
-
-    within "#new_user" do
-      # fill_in "user_name", with: "Test User"
-      fill_in "user_email", with: "test@example.com"
-      fill_in "user_password", with: "123456789"
-      fill_in "user_password_confirmation", with: "123456789"
-    end
-
-    click_button "Sign up"
-
-    expect( page.body ).to_not include( "Welcome! You have signed up successfully." )
-  end  
-
-  it "should require a user to have an email address" do
-    visit new_user_registration_path
-
-    within "#new_user" do
-      # fill_in "user_email", with: "test@example.com"
-      fill_in "user_password", with: "123456789"
-      fill_in "user_password_confirmation", with: "123456789"
-    end
-
-    click_button "Sign up"
-
-    expect( page.body ).to_not include( "Welcome! You have signed up successfully." )
-  end  
-
+feature "Edit Registration", :type => :feature do
+  
   it "should let a user change their password if they enter in their existing password" do
-    visit new_user_registration_path
-
-    within "#new_user" do
-      fill_in "user_name", with: "Test User"
-      fill_in "user_email", with: "test@example.com"
-      fill_in "user_password", with: "123456789"
-      fill_in "user_password_confirmation", with: "123456789"
-    end
-
-    click_button "Sign up"
+    sign_up_with('Test User', 'test@example.com', '123456789', '123456789')
 
     expect( page.body ).to include( "Welcome! You have signed up successfully." )
 

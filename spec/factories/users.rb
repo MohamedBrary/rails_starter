@@ -4,6 +4,7 @@ FactoryGirl.define do
 end
 
 FactoryGirl.define do
+  
   factory :user do
     email
     name
@@ -11,16 +12,23 @@ FactoryGirl.define do
     password_confirmation '12345678'
 
     trait :regular do
-      role 'regular' 
+      role 'regular'
     end
 
     trait :manager do
       role 'manager'
     end
-    
+
     trait :admin do
-      role 'admin'      
+      role 'admin'
     end
 
-  end
+  end # of factory :user
+
+  factory :user_with_token, parent: :user do
+    after :build do |user, evaluator|
+      user.user_tokens.build
+    end
+  end # of factory :user_with_token
+
 end

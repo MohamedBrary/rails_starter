@@ -7,6 +7,7 @@ class User < ApplicationRecord
   enum role: { user: 0, manager: 1, admin: 2 }
 
   has_many :identities, dependent: :destroy  
+  has_many :user_tokens, dependent: :destroy
   
   # -- Validations
     

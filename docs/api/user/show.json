@@ -1,0 +1,38 @@
+{
+  "resource": "User",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/v1/users/:id",
+  "description": "show",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "id",
+      "description": "User Unique Identifier"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/v1/users/8",
+      "request_body": null,
+      "request_headers": {
+        "Authorization": "Token token=\"7d2212fb\""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": null,
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"user\": {\n    \"id\": 8,\n    \"email\": \"9_user@example.net\"\n  }\n}",
+      "response_headers": {
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

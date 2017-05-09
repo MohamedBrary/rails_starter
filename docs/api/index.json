@@ -1,0 +1,58 @@
+{
+  "resources": [
+    {
+      "name": "Token",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "sign in",
+          "link": "token/sign_in.json",
+          "groups": "all",
+          "route": "/v1/token",
+          "method": "post"
+        },
+        {
+          "description": "sign out",
+          "link": "token/sign_out.json",
+          "groups": "all",
+          "route": "/v1/token",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "forgot password",
+          "link": "user/forgot_password.json",
+          "groups": "all",
+          "route": "/v1/users/forgot_password",
+          "method": "post"
+        },
+        {
+          "description": "reset password",
+          "link": "user/reset_password.json",
+          "groups": "all",
+          "route": "/v1/users/reset_password",
+          "method": "put"
+        },
+        {
+          "description": "show",
+          "link": "user/show.json",
+          "groups": "all",
+          "route": "/v1/users/:id",
+          "method": "get"
+        },
+        {
+          "description": "sign up",
+          "link": "user/sign_up.json",
+          "groups": "all",
+          "route": "/v1/users",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}

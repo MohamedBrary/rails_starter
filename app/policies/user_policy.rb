@@ -26,16 +26,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    # only admin can change type of non customer type
-    if current_user.admin? && !record.customer?
-      [:name, :email, :password, :password_confirmation, :type]
-    else
-      [:name, :email, :password, :password_confirmation]
-    end
-  end
-
-
-  def permitted_attributes
     # normal users can't change their own role
     attributes = [:name, :email, :password, :password_confirmation, :role]
     current_user_allowed_to_crud? ? attributes : (attributes - [:role])

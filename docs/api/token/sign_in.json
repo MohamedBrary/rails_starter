@@ -1,0 +1,44 @@
+{
+  "resource": "Token",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/v1/token",
+  "description": "sign in",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "scope": "user",
+      "name": "email",
+      "description": "Email"
+    },
+    {
+      "required": true,
+      "scope": "user",
+      "name": "password",
+      "description": "Password"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/v1/token",
+      "request_body": "user[email]=user_1%40example.com&user[password]=12345678",
+      "request_headers": {
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/x-www-form-urlencoded",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"user_token\": {\n    \"access_token\": \"147eb225\",\n    \"user\": {\n      \"id\": 1,\n      \"email\": \"user_1@example.com\"\n    }\n  }\n}",
+      "response_headers": {
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

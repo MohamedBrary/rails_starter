@@ -1,4 +1,4 @@
-RSpec.describe Identity, :type => :model do
+describe Identity, :type => :model do
   describe "validations" do
     before( :each ) do
       @user = build :user

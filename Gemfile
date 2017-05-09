@@ -35,8 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-byebug'
+  # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'debbie'
 
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -47,6 +47,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'faker'
+  gem 'rspec_api_documentation'
 end
 
 group :test do
@@ -64,7 +65,7 @@ group :development do
 
   # used to populate database with fake data  
   gem 'populator'  
-  gem 'colorize' # Coloring the console
+  gem 'colorize' # Coloring the console output
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -80,7 +81,6 @@ gem 'simple_form'
 gem 'devise', github: 'plataformatec/devise'
 gem 'erubis'
 gem 'omniauth'
-gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', require: 'google/apis'
@@ -94,3 +94,6 @@ gem 'activerecord-session_store', :git => 'https://github.com/rails/activerecord
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+# API gem
+gem 'apitome'
