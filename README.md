@@ -17,4 +17,8 @@ This application is deployed on [Heroku](https://rails5-starter.herokuapp.com), 
 * Email: 'admin@rails5-starter.com'
 * Password: 'password'
 
-To see the steps used creating this app, checkout out this [gist](https://gist.github.com/MohamedBrary/12465abb009d5dbeadeb8cde9adb30b5).
+_To see the steps used creating this app, checkout out this [gist](https://gist.github.com/MohamedBrary/12465abb009d5dbeadeb8cde9adb30b5)._
+
+***
+
+For the same features but integerating **React** in the front end, checkout out this [repository](https://github.com/MohamedBrary/rails_starter_react).

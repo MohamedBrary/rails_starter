@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # latest ruby version
-ruby '2.3.4'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'
@@ -73,6 +73,7 @@ group :development do
 end
 
 group :production do
+  # For deploying to Heroku
   gem 'pg'
 end
 
@@ -96,12 +97,11 @@ gem 'google-api-client', require: 'google/apis'
 # User authorization
 gem 'pundit'
 
-# Store cookies as activerecord
-# gem 'activerecord-session_store'
+# Store cookies as activerecord, TODO special commit compaitable with Rails 5.1
 gem 'activerecord-session_store', :git => 'https://github.com/rails/activerecord-session_store.git', :ref => '3fc715a434e2b58c07ef91b34b9e2a39c4d47a37'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# API gem
+# API documentation gem
 gem 'apitome'
